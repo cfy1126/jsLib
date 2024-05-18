@@ -14,7 +14,7 @@ const dataSources = [
 function App() {
   return (
     <div className="App">
-      <FilterableProductTable />
+      <FilterableProductTable products={dataSources} />
     </div>
   );
 }

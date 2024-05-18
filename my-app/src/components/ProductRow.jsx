@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function ProductRow() {
+export default function ProductRow({ product }) {
   return (
     <tr>
-      <th>name</th>
-      <th>Price</th>
+      <th>{product.name}</th>
+      <th>{product.price}</th>
     </tr>
   );
 }
