@@ -2,7 +2,7 @@ import React from "react";
 import ProductCategoryRow from "./ProductCategoryRow";
 import ProductRow from "./ProductRow";
 
-export default function ProductTable({ products = [] }) {
+export default function ProductTable({ products = [], value, isStock }) {
   const dataSources = products.reduce((acc, item) => {
     const { category } = item;
     if (!acc[category]) {
@@ -18,9 +18,15 @@ export default function ProductTable({ products = [] }) {
       arr.push(
         <React.Fragment key={category}>
           <ProductCategoryRow key={category} category={category} />
-          {dataSources[category].map((item, index) => (
-            <ProductRow key={index} product={item} />
-          ))}
+          {dataSources[category].map((item, index) => {
+            if (isStock && !item.stocked) {
+              return null;
+            } else if (value && item.name.indexOf(value) === -1) {
+              return null;
+            } else {
+              return <ProductRow key={index} product={item} />;
+            }
+          })}
         </React.Fragment>
       );
     }
