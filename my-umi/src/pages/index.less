@@ -1,3 +1,47 @@
-.title {
-  background: rgb(121, 242, 157);
+// .test{
+// background: url('../assets//favicon.ico') no-repeat center center / cover;
+// background: url('~@/assets//favicon.icon');
+// background: url('cdn url');
+// background: url('/favicon.ico');
+// }
+
+@width: 100px;
+@height: @width - 80px;
+
+.header {
+  width: @width;
+  height: @height;
 }
+
+.bordered(@topW: 1px, @bottomW: 2px) {
+  border-top: @topW solid red;
+  border-bottom: @bottomW solid red;
+}
+
+#a1 {
+  color: #f00;
+  .bordered();
+}
+
+.a2 {
+  color: #0f0;
+  .bordered(2px, 4px);
+  border-bottom: solid 1px #00f; // 会覆盖.bordered()中的border-bottom
+}
+
+.nesting {
+  font-size: 16px;
+  h2 {
+    color: #f00;
+  }
+  p {
+    color: #0f0;
+  }
+}
+
+:global {
+  .linkin h2 {
+    color: #f00;
+  }
+}
+

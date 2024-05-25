@@ -1,5 +1,6 @@
 import { defineConfig } from 'umi';
 import routes from './routes';
+import theme from './theme';
 
 export default defineConfig({
   // node_modules 目录下依赖文件编译配置
@@ -19,4 +20,6 @@ export default defineConfig({
   dynamicImport: {
     loading: '@/components/loading',
   },
+  // mountElementId: 'app',
+  theme: theme,
 });
