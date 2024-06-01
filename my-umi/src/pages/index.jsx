@@ -61,3 +61,10 @@ export default function IndexPage() {
     </MyContext.Provider>
   );
 }
+
+/**
+ * 1. 请求跳转在浏览器端完成，不会重新请求服务器html
+ * 2. 不同路由跟对应的组件路径关联上，实现跳转
+ * 3. 配置式路由（权重较高）
+ * 4. 约定式路由
+ */
